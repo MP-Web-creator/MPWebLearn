@@ -1,0 +1,80 @@
+<html>   
+    <head>
+        <!--link to the css file-->
+        <link rel="stylesheet" type="text/css" href="Css/CssGrid.css"/>
+    </head>
+
+    <body>
+        <!--grid content-->
+        <div id=grid-container class="grid-container">
+            <div id="grid-item-1" class="grid-item-1" onclick= "MergeCell1()">1</div>
+            <div id="grid-item-2" class="grid-item-2" onclick= "MergeCell2()">2</div>
+            <div id="grid-item-3" class="grid-item-3" onclick= "MergeCell3()">3</div>
+            <div id="grid-item-4" class="grid-item-4" onclick= "MergeCell4()">4</div>
+            <div id="grid-item-5" class="grid-item-5" onclick= "MergeCell5()">5</div>
+            <div id="grid-item-6" class="grid-item-6" onclick= "MergeCell6()">6</div>
+            <div id="grid-item-7" class="grid-item-7" onclick= "MergeCell7()">7</div>
+        </div>
+        
+
+        <script>
+            //function to determinate the change in the cells after onclick on the cell specific
+            
+            //i want to use this variable to determine the number "grid-item" into loop for and no reapet the "function MergeCell"-->var x = document.getElementById("grid-item-1").innerText;
+
+            function MergeCell1() {
+                document.getElementById("grid-item-1").remove();
+                document.getElementById("grid-container").style.gridTemplateColumns="auto";
+                document.getElementById("grid-item-2").style.background= getRandomColor();
+            }
+            function MergeCell2() {
+                document.getElementById("grid-item-2").remove();
+                document.getElementById("grid-container").style.gridTemplateRows="100px 100px";
+                document.getElementById("grid-item-3").style.background= getRandomColor();
+            }
+            function MergeCell3() {                
+                document.getElementById("grid-item-3").remove();
+                document.getElementById("grid-container").style.gridTemplateColumns="100px 100px";
+                document.getElementById("grid-item-4").style.background= getRandomColor();
+            }
+            function MergeCell4() {                
+                document.getElementById("grid-item-4").remove();
+                document.getElementById("grid-container").style.gridTemplateRows="100px 100px";
+                document.getElementById("grid-item-5").style.background= getRandomColor();
+            }
+            function MergeCell5() {                
+                document.getElementById("grid-item-5").remove();
+                document.getElementById("grid-container").style.gridTemplateColumns="100px 100px";
+                document.getElementById("grid-item-6").style.background= getRandomColor();
+            }  
+            function MergeCell6() {                
+                document.getElementById("grid-item-6").remove();
+                document.getElementById("grid-container").style.gridTemplateRows="100px 100px";
+                document.getElementById("grid-item-7").style.background= getRandomColor();
+
+            }
+            function MergeCell7() {
+                document.getElementById("grid-item-7").remove();
+                document.getElementById("grid-container").style.gridTemplateColumns="100px 100px";
+                document.getElementById("grid-item-1").style.background= getRandomColor();
+            }
+
+            //function for random color
+            function getRandomColor() {
+                var letters = '0123456789ABCDEF';
+                var color = '#';
+                for (  var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }      
+            function setRandomColor() {
+                $("#colorpad").css("background-color", getRandomColor());
+            }
+            
+        </script>
+        
+        <!--this script importing the Jquery for random color-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+    </body>
+</html>
